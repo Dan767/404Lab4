@@ -1,0 +1,41 @@
+1.
+
+https://github.com/Dan767/404Lab4
+
+2.
+
+You see a Django welcome page that says "The install worked successfully" with the spaceship on it.
+
+3.
+
+At 127.0.0.1:8000/ I receive a 404, and at 127.0.0.1:8000/polls/ I receive the following:
+Hello, world. You're at the polls index.
+
+4.
+
+
+5.
+
+I see the site administration page, including sections for "Authentication and Authorization"
+and a section for "Polls".
+
+6.
+
+I see the "You're looking at question 38" message.
+/vote/:
+You're voting on question 38.
+/results/:
+You're looking at the results of question 38.
+Character strings cause a 404, since it is looking for an integer to index with.
+This can be fixed by using key-value pairs rather than an index.
+
+7.
+
+Hardcoding URLs is a bad idea, since if the main site is moved, then all of the hardcoded
+URLs will break and require updating.
+
+8.
+
+
+
+
