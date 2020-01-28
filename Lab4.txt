@@ -4,7 +4,7 @@ https://github.com/Dan767/404Lab4
 
 2.
 
-You see a Django welcome page that says "The install worked successfully" with the spaceship on it.
+You see a Django "welcome" page that says "The install worked successfully" with the spaceship on it.
 
 3.
 
@@ -13,21 +13,29 @@ Hello, world. You're at the polls index.
 
 4.
 
+A django migration is how django propagates the changes made to models into the database schema.
+This is important so that the database is consistent with the model, no information is lost, and 
+there are no inconsistencies that might interfere with the operation of the app.
 
 5.
 
 I see the site administration page, including sections for "Authentication and Authorization"
 and a section for "Polls".
+Additional sections automatically appear here when they are registered with the admin.
+There are also a large number of ModelAdmin subclasses that can be used to customize the site, 
+which can be integrated as desired.
+
 
 6.
-
+/polls/38/
 I see the "You're looking at question 38" message.
 /vote/:
 You're voting on question 38.
 /results/:
 You're looking at the results of question 38.
-Character strings cause a 404, since it is looking for an integer to index with.
-This can be fixed by using key-value pairs rather than an index.
+Character strings cause a 404, since it is looking for an integer to use as reference:
+path('<int:question_id>/', views.detail, name='detail')
+This could be fixed by adding paths for strings as well, rather than just 'int'.
 
 7.
 
@@ -36,6 +44,8 @@ URLs will break and require updating.
 
 8.
 
-
+Using the generic views makes general design easier since they abstract and simplify common 
+patterns that are used in views to make it easier to write.  It would be best to avoid these when designing views that are more custom or unique, so that we can start from a more basic level, 
+rather than trying to deal with the pre-configuration of the generic views.
 
 
